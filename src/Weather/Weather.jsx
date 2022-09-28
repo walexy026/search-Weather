@@ -6,10 +6,11 @@ const Weather = () => {
     const [data, setData]   = useState('');
     let Apikey = "29911f83f1658a0684c0fc4fbc7a31a2"
     // const api =' https://api.openweathermap.org/data/2.5/weather?q={searchQuery}&appid={key}'
+    const apiEndpoint =' https://api.openweathermap.org/data/2.5/weather?q'
     useEffect(
         () => {
       const getWeather = async () => {
-        const response = await fetch( `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${Apikey}`);
+        const response = await fetch( `${apiEndpoint}=${searchQuery}&appid=${Apikey}`);
         let data = await response.json();
         setData(JSON.stringify(data));
         // console.log(data)
